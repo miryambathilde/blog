@@ -1,2 +1,17 @@
-<h1>Nosotros</h1>
+<%= provide(:titulo, "Nosotros")%>
 <p>Aquí podrás saber un poco sobre nosotros</p>
+
+<%= @mensaje %>
+<br>
+
+<ul>
+    <%= @usuarios.each do |i| %>
+        <%= "<li> #{i} </li>".html_safe %>
+    <% end %>
+</ul>
+
+
+<%= link_to 'Home', root_path %>
+<%= link_to 'Contacto', estaticas_contacto_path %>
+
+<br>

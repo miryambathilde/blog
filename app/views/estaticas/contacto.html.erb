@@ -1,2 +1,12 @@
-<h1>Contacto</h1>
+<%= provide(:titulo, "Contacto")%>
 <p>Aquí puedes contactar con nosotros</p>
+
+<% #params.inspect  %>
+
+<br>
+
+<p>ID: <%= @id %></p>
+<p>PAG: <%= @pagina %></p>
+
+<%= content_for(:saludo, "Hola")  %>
+<%= yield :saludo %>
