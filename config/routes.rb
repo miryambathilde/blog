@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  #get 'articulos/new'
+  get 'articulos/index'
+
+  #con esto creamos todas las rutas del recurso articulo directamente
+  resources :articulos 
+
   get 'estaticas/contacto'
   get 'estaticas/nosotros'
   
