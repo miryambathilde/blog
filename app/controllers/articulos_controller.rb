@@ -1,6 +1,7 @@
 class ArticulosController < ApplicationController
   
   def index
+    @articulos=Articulo.all.order("created_at DESC")
   end
   
   def new
@@ -17,15 +18,27 @@ class ArticulosController < ApplicationController
   end
 
   def edit
+    @articulo=Articulo.find(params[:id])
   end
 
   def update
+    @articulo=Articulo.find(params[:id])
+    if @articulo.update.find(articulo_params)
+      flash[:notice] = "El artículo se ha modificado correctamente"
+      redict_to @articulo
+    else
+      render 'edit'
+    end
   end
 
   def show
+    @articulo=Articulo.find(params[:id])
   end
 
   def destroy
+    @articulo=Articulo.find(params[:id])
+    @articulo.destroy
+    redirect_to articulos_path, :notice=>"Artículo eliminado correctamente"
   end
 
     private
