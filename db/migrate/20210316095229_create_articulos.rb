@@ -3,9 +3,9 @@ class CreateArticulos < ActiveRecord::Migration[6.1]
     create_table :articulos do |t|
       t.string :titulo
       t.text :contenido
-      t.references :autor, index: true, foreign_key: true
+      t.references :autor, null: false, index: true, foreign_key: true
 
-      t.timestamps null: false
+      t.timestamps 
     end
   end
 end
