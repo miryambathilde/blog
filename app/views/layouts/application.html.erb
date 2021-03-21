@@ -11,9 +11,20 @@
   </head>
 
   <body>
+  <div class="container">
   <%# aqui ponemos el parcial %>
-  <%= render 'shared/header'%>
+    <%= render 'shared/header'%>
+    <ul>
+      <%= flash.each do |key, value| %>
+      <li><%= value %></li>
+      <% end %>
+    </ul>
+
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+  
   <%# yield muestra el contenido de cada vista en concreto %>
     <%= yield %>
+  </div>
   </body>
 </html>

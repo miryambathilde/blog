@@ -17,6 +17,8 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+
+gem 'devise', '~> 4.7', '>= 4.7.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -55,7 +57,7 @@ group :test do
 end
 
 group :production do
-  #gem 'pg', '1.2.3'
+  gem 'pg'
   gem 'rails_12factor'
 end
 
